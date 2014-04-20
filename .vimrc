@@ -29,6 +29,11 @@ set so=9999
 set shiftwidth=4
 set tabstop=4
 
+" Set automatic indenation
+set autoindent
+
+" Use spaces instead of tabs
+set expandtab
 
 " Set search highlighting
 set hlsearch
