@@ -1,0 +1,51 @@
+#!/bin/bash
+
+
+FG_LOCAL_COLOR='\[\e[0;34m\]'
+FG_REMOTE_COLOR='\[\e[0;33m\]'
+FG_SCREEN_COLOR='\[\e[0;32m\]'
+
+FG_COLOR='\[\e[0;34m\]'
+PWD_COLOR='\[\e[37;1m\]'
+USR_COLOR='\[\e[37;1m\]'
+HOST_COLOR='\[\e[1;33m\]'
+TIME_COLOR='\[\e[37;1m\]'
+
+hostnam=$(echo -n $HOSTNAME | sed -e "s/[\.].*//")
+usernam=$(whoami)
+
+
+## Detects if connection is local or remote
+FG_COLOR="${FG_LOCAL_COLOR}"
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  FG_COLOR="${FG_REMOTE_COLOR}"
+else
+  case $(ps -o comm= -p $PPID) in
+    sshd|*/sshd) FG_COLOR="${FG_REMOTE_COLOR}";;
+  esac
+fi
+
+if [ -n "$STY" ]
+then
+    FG_COLOR=$FG_SCREEN_COLOR
+fi
+
+## Function for drawig the horizontal line
+function FILLFUNC() {
+    TERMWIDTH="${COLUMNS}"
+
+    let promptsize=$(echo -n "┌─(22:14)─(${usernam}@${hostnam})-(${PWD})" | wc -c | tr -d " ")
+    let fillsize=${TERMWIDTH}-${promptsize}+5
+
+    FILL_BEFORE=""
+    let FLAG=0;
+    while [ "$fillsize" -gt "0" ] 
+    do 
+	FILL_BEFORE="${FILL_BEFORE}─"
+	let fillsize=${fillsize}-1
+    done
+
+    echo "${FILL_BEFORE}"
+}  
+
+PS1="${FG_COLOR}┌─(${TIME_COLOR}\D{%R}${FG_COLOR})─[${PWD_COLOR}\${PWD}${FG_COLOR}]\$(FILLFUNC)─(${USR_COLOR}\u${FG_COLOR}@${HOST_COLOR}\h${FG_COLOR})─\n└─>\[\e[0m\] " 
