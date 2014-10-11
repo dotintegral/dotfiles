@@ -50,10 +50,14 @@ let mapleader=","
 
 " Window movement
 
-nnoremap <C-H> :wincmd h<CR>
-nnoremap <C-J> :wincmd j<CR>
-nnoremap <C-K> :wincmd k<CR>
-nnoremap <C-L> :wincmd l<CR>
+nnoremap <C-S-H> :wincmd h<CR>
+nnoremap <C-S-J> :wincmd j<CR>
+nnoremap <C-S-K> :wincmd k<CR>
+nnoremap <C-S-L> :wincmd l<CR>
+
+" Buffer movement
+nnoremap <C-TAB> :bnext<CR>
+nnoremap <C-S-TAB> :bprevious<CR>
 
 " Toggle cursor position in the middle of the screen
 nnoremap <Leader>zz :let &scrolloff=9999-&scrolloff<CR>

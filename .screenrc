@@ -14,11 +14,11 @@ defscrollback 10000
 sorendition =bu kg
 vbell "off"
 
-screen -t bash
-split -v
-focus down
-screen -t bash
-split
-focus down
-screen -t bash
-focus down
+#screen -t bash
+#split -v
+#focus down
+#screen -t bash
+#split
+#focus down
+#screen -t bash
+#focus down
