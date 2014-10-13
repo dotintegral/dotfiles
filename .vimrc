@@ -59,6 +59,9 @@ nnoremap <C-S-L> :wincmd l<CR>
 nnoremap <C-TAB> :bnext<CR>
 nnoremap <C-S-TAB> :bprevious<CR>
 
+" Close buffer without messing windows
+nnoremap <C-w> :bp<cr>:bd #<cr>
+
 " Toggle cursor position in the middle of the screen
 nnoremap <Leader>zz :let &scrolloff=9999-&scrolloff<CR>
 
@@ -77,7 +80,22 @@ nnoremap <C-n> :tabn<CR>
 " Prev tab alias
 nnoremap <C-p> :tabp<CR>
 
+" CtrlP eclipse-like mapping
+nnoremap <C-S-r> :CtrlP<CR>
 
+
+" Plugin settings
+" ***************
+
+" NERDTree - change current working directory
+let g:NERDTreeChDirMode=2
+
+" CtrlP - working path setting
+let g:ctrlp_working_path_mode = 0
+
+" MiniBufferExpl - open always
+let g:miniBufExplForceDisplay = 1
+" let g:miniBufExplAutoStart = 0
 
 " Functions
 " *********
