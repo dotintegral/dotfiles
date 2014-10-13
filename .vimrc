@@ -39,7 +39,7 @@ set expandtab
 set hlsearch
 
 " Set line lenght to 80
-set textwidth=80
+set textwidth=120
 
 " Change leader key to ','
 let mapleader=","
@@ -94,7 +94,7 @@ let g:NERDTreeChDirMode=2
 let g:ctrlp_working_path_mode = 0
 
 " MiniBufferExpl - open always
-let g:miniBufExplForceDisplay = 1
+" let g:miniBufExplForceDisplay = 1
 " let g:miniBufExplAutoStart = 0
 
 " Functions
@@ -107,15 +107,15 @@ let g:miniBufExplForceDisplay = 1
 " Set colorscheme
 colorscheme twilight
 
-" Set GUI font
-set guifont=Ubuntu\ Mono\ 12
+" set gui font
+set guifont=ubuntu\ mono\ 12
+
+" set half sized-window
+" winsize 200 57
+winsize 232 60
 
 " Set Maximalized Window mode
 " au GUIEnter * simalt ~x
-
-" Set half sized-window
-" winsize 200 57
-winsize 232 60
 
 " Remove menu bar
 :set guioptions-=m  
@@ -134,4 +134,8 @@ winsize 232 60
 " ****
 
 
+" Source external files
+" *********************
+
+:so .vimrc-local
 
