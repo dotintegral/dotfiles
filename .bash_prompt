@@ -48,4 +48,4 @@ function FILLFUNC() {
     echo "${FILL_BEFORE}"
 }  
 
-PS1="${FG_COLOR}┌─(${TIME_COLOR}\D{%R}${FG_COLOR})─[${PWD_COLOR}\${PWD}${FG_COLOR}]\$(FILLFUNC)─(${USR_COLOR}\u${FG_COLOR}@${HOST_COLOR}\h${FG_COLOR})─\n└─>\[\e[0m\] " 
+PS1="${FG_COLOR}┌─(${TIME_COLOR}\D{%R}${FG_COLOR})─[${PWD_COLOR}\${PWD}${FG_COLOR}]\n└─>\[\e[0m\] " 
