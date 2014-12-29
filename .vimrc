@@ -9,16 +9,18 @@ set nu
 " Enable entered commands display
 set showcmd
 
-
 " Enable syntax coloring
 syntax on
 
 " Set ruler (show ROW,COL details)
 set ruler
 
+" Set ofset lines
+set so=7
 
-" Set cursor position in the middle
-set so=9999
+" Set display of invisible characters, set characters
+set list
+set listchars=tab:▸\ ,trail:·
 
 
 " Input
@@ -28,6 +30,9 @@ set so=9999
 " Set tab to 4 spaces
 set shiftwidth=4
 set tabstop=4
+
+" Remove 4 spaces on backspace
+set softtabstop=4
 
 " Set automatic indenation
 set autoindent
@@ -44,23 +49,28 @@ set textwidth=120
 " Change leader key to ','
 let mapleader=","
 
+" Allow buffer to be hidden automaticallly
+set hidden
+
 
 " Key Mapping
 " ***********
 
 " Window movement
 
-nnoremap <C-S-H> :wincmd h<CR>
-nnoremap <C-S-J> :wincmd j<CR>
-nnoremap <C-S-K> :wincmd k<CR>
-nnoremap <C-S-L> :wincmd l<CR>
+nnoremap <C-H> :wincmd h<CR>
+nnoremap <C-J> :wincmd j<CR>
+nnoremap <C-K> :wincmd k<CR>
+nnoremap <C-L> :wincmd l<CR>
 
 " Buffer movement
 nnoremap <C-TAB> :bnext<CR>
 nnoremap <C-S-TAB> :bprevious<CR>
 
 " Close buffer without messing windows
-nnoremap <C-w> :bp<cr>:bd #<cr>
+" nnoremap <C-w> :bp<cr>:bd #<cr>
+
+
 
 " Toggle cursor position in the middle of the screen
 nnoremap <Leader>zz :let &scrolloff=9999-&scrolloff<CR>
@@ -69,19 +79,19 @@ nnoremap <Leader>zz :let &scrolloff=9999-&scrolloff<CR>
 nnoremap <Leader>l :let &rnu=1-&rnu<CR>
 
 " Toggle Nerd Tree Tabs
-nnoremap <Leader>b :NERDTreeTabsToggle<CR>
+nnoremap <Leader>b :NERDTreeToggle<CR>
 
 " Open tab alias
-nnoremap <C-a> :tabe
+" nnoremap <C-a> :tabe
 
 " Next tab alias
-nnoremap <C-n> :tabn<CR>
+" nnoremap <C-n> :tabn<CR>
 
 " Prev tab alias
-nnoremap <C-p> :tabp<CR>
+" nnoremap <C-p> :tabp<CR>
 
-" CtrlP eclipse-like mapping
-nnoremap <C-S-r> :CtrlP<CR>
+" CtrlP mapping
+nmap <C-p> :CtrlP<CR>
 
 
 " Plugin settings
