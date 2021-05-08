@@ -1,0 +1,21 @@
+# #!/bin/zsh
+
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    echo "%F{26}┌─[%F{15}%/%F{26}]──(%F{15}%T%F{26})
+└─>%f "
+  else
+    echo "%F{26}┌─[%F{15}%/%F{26}]──(%F{15}%T%F{26})
+┆ %F{3}${branch}%F{26}
+└─>%f "
+  fi
+}
+
+
+# Enable substitution in the prompt.
+setopt prompt_subst
+
+PROMPT='$(git_branch_name)'
