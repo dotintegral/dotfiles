@@ -1,0 +1,5 @@
+#!/bin/zsh
+alias gg="git status"
+alias gcho="git checkout"
+alias gchob="git checkout -b"
+alias c="clear"
