@@ -14,10 +14,15 @@ Türbö Nerd Setup
 1. `cd ~/dotfiles && stow .` to symlink things
 
 
-### Awesome Terminal setup
+### Awesome ZSH
 
 1. Install Oh My ZSH - [check here](https://ohmyz.sh/#install)
 1. Install Theme Powerlevel10k - [check here](https://github.com/romkatv/powerlevel10k)
 
+
+### TMux Setup
+
+1. Install TMux - `brew install tmux`
+1. Install TMux Packet Manager - `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 
 
