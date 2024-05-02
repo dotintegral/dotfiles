@@ -221,7 +221,7 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=0
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
   # If directory is too long, shorten some of its segments to the shortest possible unique
@@ -360,11 +360,13 @@
 
   #####################################[ vcs: git status ]######################################
   # Version control background colors.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=3
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=3
-  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=10
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=11
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=11
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=10
+  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=2
+
+  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=7
 
   # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
@@ -373,7 +375,7 @@
   # Change the value of this parameter to show a different icon.
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
 
-  # Formatter for Git status.
+  # for Git status.
   #
   # Example output: master wip ⇣42⇡42 *42 merge ~42 +42 !42 ?42.
   #
@@ -393,10 +395,10 @@
 
     # Styling for different parts of Git status.
     local       meta='%7F' # white foreground
-    local      clean='%0F' # black foreground
-    local   modified='%0F' # black foreground
-    local  untracked='%0F' # black foreground
-    local conflicted='%1F' # red foreground
+    local      clean='%7F' # black foreground
+    local   modified='%7F' # black foreground
+    local  untracked='%7F' # black foreground
+    local conflicted='%7F' # red foreground
 
     local res
 
@@ -1757,7 +1759,7 @@
   ####################################[ time: current time ]####################################
   # Current time color.
   typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_TIME_BACKGROUND=7
+  typeset -g POWERLEVEL9K_TIME_BACKGROUND=6
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'
   # If set to true, time will update when you hit enter. This way prompts for the past
