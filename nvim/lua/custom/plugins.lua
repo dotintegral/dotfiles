@@ -22,6 +22,26 @@ local plugins = {
         "typescript-language-server"
       }
     }
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = {"javascript", "javascriptreact", "typescript", "typescriptreact", "html"},
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      local opts = require "plugins.configs.treesitter"
+      opts.ensure_installed = {
+        "lua",
+        "javascript",
+        "typescript",
+        "tsx",
+      }
+      return opts
+    end,
   }
 }
 
