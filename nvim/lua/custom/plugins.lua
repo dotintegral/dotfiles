@@ -10,6 +10,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "eslint-lsp",
         "typescript-language-server"
       }
     }
