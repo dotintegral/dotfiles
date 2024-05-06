@@ -42,7 +42,12 @@ local plugins = {
       }
       return opts
     end,
-  }
+  },
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+    opts = {}
+  },
 }
 
 return plugins
