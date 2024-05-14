@@ -25,4 +25,11 @@ Türbö Nerd Setup
 1. Install TMux - `brew install tmux`
 1. Install TMux Packet Manager - `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 
+### NVim Setup
+1. Install NeoVim - `brew install nvim`
+1. Link `nvim` dir to `~/.config/nvim`
+
+### LazyGit Setup
+1. Install NeoVim - `brew install lazygit`
+1. Link `lazygit/config.yml` dir to `~/Library/Application\ Support/lazygit/config.yml`
 
