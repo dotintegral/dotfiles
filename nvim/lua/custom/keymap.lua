@@ -16,6 +16,12 @@ vim.api.nvim_set_keymap('n', '<leader>.', '<cmd>lua vim.lsp.buf.code_action()<CR
 -- Set leader b to open buffers
 vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Telescope buffers<CR>', { noremap = true, silent = true })
 
+-- Remap Copilot Accept
+-- 
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+
+vim.api.nvim_set_keymap("i", "<C-/>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
 
 
 -- Remap d to delete without affecting the Vim clipboard
