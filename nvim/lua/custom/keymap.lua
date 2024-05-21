@@ -23,6 +23,13 @@ vim.g.copilot_assume_mapped = true
 
 vim.api.nvim_set_keymap("i", "<C-/>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
 
+-- C-q in telescope sends selected files to qflist and opens qflist 
+vim.api.nvim_set_keymap('n', '<C-q>', '<cmd>lua require("telescope.actions").send_to_qflist()<CR><cmd>lua require("telescope.actions").open_qflist()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-q>', '<cmd>lua require("telescope.actions").send_to_qflist()<CR><cmd>lua require("telescope.actions").open_qflist()<CR>', { noremap = true, silent = true })
+
+-- C-Q in telescope sends all files to qflist and opens qflist 
+vim.api.nvim_set_keymap('n', '<C-Q>', '<cmd>lua require("telescope.actions").send_to_qflist()<CR><cmd>lua require("telescope.actions").open_qflist()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-Q>', '<cmd>lua require("telescope.actions").send_to_qflist()<CR><cmd>lua require("telescope.actions").open_qflist()<CR>', { noremap = true, silent = true })
 
 -- Remap d to delete without affecting the Vim clipboard
 -- vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true, silent = true })
