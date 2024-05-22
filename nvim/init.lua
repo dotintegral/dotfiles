@@ -22,5 +22,6 @@ require "plugins"
 
 require("custom.keymap")
 require("custom.settings")
+require("custom.scripts.prettier")
 
 -- require("custom.scripts.vscws")

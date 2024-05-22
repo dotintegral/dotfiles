@@ -1,7 +1,10 @@
 -- Set CMD-S to save
 -- vim.api.nvim_set_keymap('n', '<M-s>', ':lua vim.lsp.buf.format()<CR>:EslintFixAll<CR>:w<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<M-s>',
-  [[:lua vim.lsp.buf.format()<CR>:lua vim.defer_fn(function() vim.cmd('EslintFixAll') end, 0)<CR>:w<CR>]],
+-- vim.api.nvim_set_keymap('n', '<M-s>',
+--   [[:lua vim.lsp.buf.format()<CR>:lua vim.defer_fn(function() vim.cmd('EslintFixAll') end, 0)<CR>:w<CR>]],
+--   { noremap = true, silent = true })
+--
+vim.api.nvim_set_keymap('n', '<M-s>', ':PrettierCLI<CR>:w<CR>',
   { noremap = true, silent = true })
 
 -- Set leader g D to use telescope
@@ -21,7 +24,7 @@ vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Telescope buffers<CR>', { norema
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 
-vim.api.nvim_set_keymap("i", "<C-/>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<C-y>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
 
 -- C-q in telescope sends selected files to qflist and opens qflist 
 vim.api.nvim_set_keymap('n', '<C-q>', '<cmd>lua require("telescope.actions").send_to_qflist()<CR><cmd>lua require("telescope.actions").open_qflist()<CR>', { noremap = true, silent = true })
