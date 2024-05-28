@@ -9,19 +9,19 @@ M.general = {
     ["<C-e>"] = { "<End>", "End of line" },
 
     -- navigate within insert mode
-    ["<C-h>"] = { "<Left>", "Move left" },
-    ["<C-l>"] = { "<Right>", "Move right" },
-    ["<C-j>"] = { "<Down>", "Move down" },
-    ["<C-k>"] = { "<Up>", "Move up" },
+    -- ["<C-h>"] = { "<Left>", "Move left" },
+    -- ["<C-l>"] = { "<Right>", "Move right" },
+    -- ["<C-j>"] = { "<Down>", "Move down" },
+    -- ["<C-k>"] = { "<Up>", "Move up" },
   },
 
   n = {
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows
-    ["<C-h>"] = { "<C-w>h", "Window left" },
-    ["<C-l>"] = { "<C-w>l", "Window right" },
-    ["<C-j>"] = { "<C-w>j", "Window down" },
-    ["<C-k>"] = { "<C-w>k", "Window up" },
+    -- ["<C-h>"] = { "<C-w>h", "Window left" },
+    -- ["<C-l>"] = { "<C-w>l", "Window right" },
+    -- ["<C-j>"] = { "<C-w>j", "Window down" },
+    -- ["<C-k>"] = { "<C-w>k", "Window up" },
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },

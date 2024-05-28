@@ -34,6 +34,5 @@ vim.api.nvim_set_keymap('i', '<C-q>', '<cmd>lua require("telescope.actions").sen
 vim.api.nvim_set_keymap('n', '<C-Q>', '<cmd>lua require("telescope.actions").send_to_qflist()<CR><cmd>lua require("telescope.actions").open_qflist()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-Q>', '<cmd>lua require("telescope.actions").send_to_qflist()<CR><cmd>lua require("telescope.actions").open_qflist()<CR>', { noremap = true, silent = true })
 
--- Remap d to delete without affecting the Vim clipboard
--- vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('v', 'd', '"_d', { noremap = true, silent = true })
+-- leader g y shows neoclip in telescope
+vim.api.nvim_set_keymap('n', '<leader>gy', '<cmd>lua require("telescope").extensions.neoclip.default()<CR>', { noremap = true, silent = true })
