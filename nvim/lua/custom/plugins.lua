@@ -6,7 +6,9 @@ local plugins = {
     },
     event = "VeryLazy",
     config = function()
-      require('neoclip').setup()
+      require('neoclip').setup({
+        default_register = {'"', '+', '*'},
+      })
     end,
   },
   {
