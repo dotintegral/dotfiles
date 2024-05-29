@@ -1,2 +1,2 @@
 vim.opt.relativenumber = true
-vim.opt.scrolloff = 40
+vim.opt.scrolloff = 15
