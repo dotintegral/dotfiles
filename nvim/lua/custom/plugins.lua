@@ -86,6 +86,10 @@ local plugins = {
       "rcarriga/nvim-notify",
     },
     config = function()
+      require("notify").setup({
+        timeout = 1000,
+        stages = 'static'
+      })
       require("noice").setup({
         routes = {
           {
