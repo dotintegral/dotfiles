@@ -41,4 +41,7 @@ vim.api.nvim_set_keymap('n', '<leader>gy', '<cmd>lua require("telescope").extens
 --leader g e goes to next diagnostic, severity: error or warning, uses vim.diagnostic
 vim.api.nvim_set_keymap('n', '<leader>ge', '<cmd>lua vim.diagnostic.goto_next({severity = { vim.diagnostic.severity.WARN, vim.diagnostic.severity.ERROR }})<CR>', { noremap = true, silent = true })
 
+-- leader f g shows git status in telescope
+vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>lua require("telescope.builtin").git_status()<CR>', { noremap = true, silent = true, desc = 'Git Status' })
+
 
