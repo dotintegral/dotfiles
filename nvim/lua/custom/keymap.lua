@@ -5,7 +5,7 @@
 --   [[:lua vim.lsp.buf.format()<CR>:lua vim.defer_fn(function() vim.cmd('EslintFixAll') end, 0)<CR>:w<CR>]],
 --   { noremap = true, silent = true })
 --
-vim.api.nvim_set_keymap('n', '<M-s>', ':PrettierCLI<CR>:w<CR>',
+vim.api.nvim_set_keymap('n', '<M-s>', ':EslintFixAll<CR>:PrettierCLI<CR>:w<CR>',
   { noremap = true, silent = true })
 
 -- Set leader g D to use telescope
