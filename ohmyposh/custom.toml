@@ -14,7 +14,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     trailing_diamond = ''
     template = ' {{ if .SSHSession }} {{ end }}{{ .UserName }} '
     background = 'green'
-    foreground = 'white'
+    foreground = 'p:black'
 
   [[blocks.segments]]
     type = 'path'
@@ -23,7 +23,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     trailing_diamond = ''
     template = '  {{ path .Path .Location }} '
     background = 'blue'
-    foreground = 'white'
+    foreground = 'p:black'
 
     [blocks.segments.properties]
       style = 'folder'
@@ -59,7 +59,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     trailing_diamond = ''
     template = ' {{ if gt .Code 0 }}{{ else }}{{ end }} '
     background = 'green'
-    foreground = 'white'
+    foreground = 'p:black'
 
     [blocks.segments.properties]
       always_enabled = true
