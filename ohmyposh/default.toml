@@ -52,10 +52,10 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   [[blocks.segments]]
     type = 'status'
     style = 'diamond'
-    background_templates = ['p:red']
+    background_templates = ['{{ if gt .Code 0 }}p:red{{ end }}']
     leading_diamond = '<transparent,background></>'
     trailing_diamond = ''
-    template = ' CONFIG ERROR '
+    template = ' {{ if gt .Code 0 }}{{ else }}{{ end }} '
     background = 'p:blue'
     foreground = 'p:white'
 

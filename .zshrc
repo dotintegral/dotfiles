@@ -113,6 +113,8 @@ source $ZSH/oh-my-zsh.sh
 
 # eval "$(oh-my-posh init zsh)"
 eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/custom.toml)"
+# eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/default.toml)"
+# eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/default.json)"
 
 
 source ~/.zsh_aliases
