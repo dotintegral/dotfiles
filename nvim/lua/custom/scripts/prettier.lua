@@ -9,8 +9,11 @@ local function prettier_cli()
   -- Get the absolute path of the current file
   local filepath = vim.api.nvim_buf_get_name(bufnr)
 
-  -- Define the Prettier command
-  local prettier_cmd = "pnpm prettier " .. filepath .. " --write"
+  -- Escape special characters in the filepath (e.g., $, &, space, etc.)
+  local escaped_filepath = vim.fn.fnameescape(filepath)
+
+  -- Define the Prettier command, wrapping the filepath in quotes
+  local prettier_cmd = "pnpm prettier " .. vim.fn.shellescape(escaped_filepath) .. " --write"
 
   -- Run the Prettier command
   local result = vim.fn.system(prettier_cmd)
@@ -18,7 +21,7 @@ local function prettier_cli()
   -- Check if the command succeeded
   if vim.v.shell_error == 0 then
     -- Reload the buffer contents from the file
-    vim.cmd('silent! edit ' .. filepath)
+    vim.cmd('silent! edit ' .. escaped_filepath)
     vim.notify("PrettierCLI success", vim.log.levels.INFO)
   else
     vim.notify("Error: Prettier command failed.\n" .. result, vim.log.levels.ERROR)
