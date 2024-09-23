@@ -81,6 +81,7 @@ local plugins = {
     event = "VeryLazy",
     opts = {},
   },
+  { 'echasnovski/mini.nvim', version = false },
 }
 
 return plugins

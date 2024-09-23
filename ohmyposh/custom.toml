@@ -5,7 +5,6 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
-  newline = true
 
   [[blocks.segments]]
     type = 'session'
@@ -46,6 +45,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   [[blocks.segments]]
     type = 'root'
     style = 'diamond'
+  newline = true
     template = '  '
     background = 'p:yellow'
     foreground = 'p:white'
@@ -65,7 +65,8 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
 
 [[blocks]]
-  type = 'rprompt'
+  type = 'prompt'
+  alignment = 'right'
 
   [[blocks.segments]]
     type = "executiontime"
