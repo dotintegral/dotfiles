@@ -45,8 +45,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
   [[blocks.segments]]
     type = 'root'
-    style = 'powerline'
-    powerline_symbol = ''
+    style = 'diamond'
     template = '  '
     background = 'p:yellow'
     foreground = 'p:white'
@@ -65,19 +64,22 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
       always_enabled = true
 
 
+[[blocks]]
+  type = 'rprompt'
 
-    # [[blocks.segments]]
-  #   type = 'status'
-  #   style = 'diamond'
-  #   background_templates = ['p:red']
-  #   leading_diamond = '<transparent,background></>'
-  #   trailing_diamond = ''
-  #   template = ' CONFIG ERROR '
-  #   background = 'p:blue'
-  #   foreground = 'p:white'
-  #
-  #   [blocks.segments.properties]
-  #     always_enabled = true
+  [[blocks.segments]]
+    type = "executiontime"
+    style = "diamond"
+    leading_diamond = ''
+    trailing_diamond = ''
+    foreground = "black"
+    background = "blue"
+    template = " < {{ .FormattedMs }} "
+
+    [blocks.segments.properties]
+      always_enabled = true
+
+
 
 [[blocks]]
   type = 'prompt'
