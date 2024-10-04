@@ -82,6 +82,17 @@ local plugins = {
     opts = {},
   },
   { 'echasnovski/mini.nvim', version = false },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    event = 'VeryLazy',
+    opts = {},
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
+    config = function()
+    require('render-markdown').setup({
+        enabled = true,
+    })
+    end,
+  },
 }
 
 return plugins
