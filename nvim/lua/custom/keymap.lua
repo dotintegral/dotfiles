@@ -5,8 +5,13 @@
 --   [[:lua vim.lsp.buf.format()<CR>:lua vim.defer_fn(function() vim.cmd('EslintFixAll') end, 0)<CR>:w<CR>]],
 --   { noremap = true, silent = true })
 --
-vim.api.nvim_set_keymap('n', '<M-s>', ':EslintFixAll<CR>:PrettierCLI<CR>:w<CR>',
-  { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<M-s>', ':EslintFixAll<CR>:w<CR>',
+--   { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<M-s>', 
+  [[<cmd>lua if vim.fn.exists(':EslintFixAll') == 2 then vim.cmd('EslintFixAll') end vim.cmd('w')<CR>]],
+  { noremap = true, silent = true }
+)
 
 -- Set leader g D to use telescope
 vim.api.nvim_set_keymap('n', '<leader>gd', '<cmd>Telescope lsp_definitions<CR>', { noremap = true, silent = true, desc = 'Go to Definition' })
