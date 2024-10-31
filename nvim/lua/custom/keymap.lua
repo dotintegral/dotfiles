@@ -8,10 +8,14 @@
 -- vim.api.nvim_set_keymap('n', '<M-s>', ':EslintFixAll<CR>:w<CR>',
 --   { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<M-s>', 
-  [[<cmd>lua if vim.fn.exists(':EslintFixAll') == 2 then vim.cmd('EslintFixAll') end vim.cmd('w')<CR>]],
-  { noremap = true, silent = true }
-)
+function SaveAndFormat()
+  if vim.fn.exists(':EslintFixAll') == 2 then
+    vim.cmd('EslintFixAll')
+  end
+  vim.cmd('PrettierCLI')
+  vim.cmd('w')
+end
+vim.api.nvim_set_keymap('n', '<M-s>', '<cmd>lua SaveAndFormat()<CR>', { noremap = true, silent = true })
 
 -- Set leader g D to use telescope
 vim.api.nvim_set_keymap('n', '<leader>gd', '<cmd>Telescope lsp_definitions<CR>', { noremap = true, silent = true, desc = 'Go to Definition' })
