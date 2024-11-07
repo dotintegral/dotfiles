@@ -5,3 +5,6 @@ vim.opt.scrolloff = 10
 vim.o.cursorline = true
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#425047" })
 
+-- Enable loading project specific settings
+vim.opt.exrc = true
+
