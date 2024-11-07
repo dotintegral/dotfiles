@@ -81,6 +81,12 @@ local plugins = {
     event = "VeryLazy",
     opts = {},
   },
+  {
+    "psliwka/vim-smoothie",
+    event = "VeryLazy",
+    config = function()
+    end,
+  },
   { 'echasnovski/mini.nvim', version = false },
   {
     'MeanderingProgrammer/render-markdown.nvim',
