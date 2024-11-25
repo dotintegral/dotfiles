@@ -99,7 +99,7 @@ local plugins = {
     })
     end,
   },
-  { 
+  {
     'xiyaowong/transparent.nvim',
     event = 'VeryLazy',
     config = function()
@@ -121,6 +121,14 @@ local plugins = {
         on_clear = function() end,
       })
     end,
+  },
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy", -- Or `LspAttach`
+    priority = 1000, -- needs to be loaded in first
+    config = function()
+        require('tiny-inline-diagnostic').setup()
+    end
   }
 }
 

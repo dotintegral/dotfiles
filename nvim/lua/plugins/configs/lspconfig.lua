@@ -8,6 +8,26 @@ local utils = require "core.utils"
 M.on_attach = function(client, bufnr)
   utils.load_mappings("lspconfig", { buffer = bufnr })
 
+  -- Configure diagnostics to disable virtual text
+  vim.diagnostic.config({
+    virtual_text = {
+      prefix = "", -- We’ll include the emoji in the format function instead
+      spacing = 4, -- Adjust spacing if needed
+      format = function(diagnostic)
+        local icons = {
+          [vim.diagnostic.severity.ERROR] = "❌ Error",
+          [vim.diagnostic.severity.WARN] = "🚧 Warning",
+          [vim.diagnostic.severity.INFO] = "💡 Info",
+          [vim.diagnostic.severity.HINT] = "💡 Hint",
+        }
+        return icons[diagnostic.severity] or ""
+      end,
+    },
+    signs = true,         -- Keep signs in the gutter
+    underline = true,     -- Keep underlines
+    update_in_insert = false, -- Disable updates in insert mode
+  })
+
   if client.server_capabilities.signatureHelpProvider then
     require("nvchad.signature").setup(client)
   end
