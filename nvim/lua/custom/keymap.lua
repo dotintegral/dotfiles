@@ -31,10 +31,12 @@ vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Telescope buffers<CR>', { norema
 
 -- Remap Copilot Accept
 -- 
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_assume_mapped = true
+-- vim.g.copilot_no_tab_map = true
+-- vim.g.copilot_assume_mapped = true
 
-vim.api.nvim_set_keymap("i", "<C-y>", 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true, desc = 'Accept Copilot' })
+-- C-y as copilot accept
+
+
 
 -- C-q in telescope sends selected files to qflist and opens qflist 
 vim.api.nvim_set_keymap('n', '<C-q>', '<cmd>lua require("telescope.actions").send_to_qflist()<CR><cmd>lua require("telescope.actions").open_qflist()<CR>', { noremap = true, silent = true })
