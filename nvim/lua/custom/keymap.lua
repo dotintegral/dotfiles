@@ -1,3 +1,5 @@
+require('custom.scripts.projectpicker')
+
 -- local map = vim.keymap.map
 -- Set CMD-S to save
 -- vim.api.nvim_set_keymap('n', '<M-s>', ':lua vim.lsp.buf.format()<CR>:EslintFixAll<CR>:w<CR>', { noremap = true, silent = true })
@@ -50,5 +52,10 @@ vim.api.nvim_set_keymap('n', '<leader>ge', '<cmd>lua vim.diagnostic.goto_next({s
 
 -- leader f g shows git status in telescope
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>lua require("telescope.builtin").git_status()<CR>', { noremap = true, silent = true, desc = 'Git Status' })
+
+-- leader pp shows project picker
+vim.keymap.set('n', '<leader>pp', function()
+  show_project_picker()
+end, { noremap = true, silent = true })
 
 
