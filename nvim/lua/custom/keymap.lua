@@ -53,6 +53,9 @@ vim.api.nvim_set_keymap('n', '<leader>ge', '<cmd>lua vim.diagnostic.goto_next({s
 -- leader f g shows git status in telescope
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>lua require("telescope.builtin").git_status()<CR>', { noremap = true, silent = true, desc = 'Git Status' })
 
+-- leader z to enter zen mode
+vim.api.nvim_set_keymap('n', '<leader>z', '<cmd>lua Snacks.zen()<CR>', { noremap = true, silent = true, desc = 'Zen Mode' })
+
 -- leader pp shows project picker
 vim.keymap.set('n', '<leader>pp', function()
   show_project_picker()
