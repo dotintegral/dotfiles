@@ -130,7 +130,10 @@ local plugins = {
     opts = {
       zen = { enabled = true }
     }
-  }
+  },
+  {
+    "ggandor/leap.nvim",
+  },
 }
 
 return plugins

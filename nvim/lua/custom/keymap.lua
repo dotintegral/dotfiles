@@ -61,4 +61,5 @@ vim.keymap.set('n', '<leader>pp', function()
   show_project_picker()
 end, { noremap = true, silent = true })
 
-
+-- leader s to use leap.nvim
+vim.api.nvim_set_keymap('n', '<leader>s', '<cmd>lua require("leap").leap({ target_windows = {  vim.api.nvim_get_current_win() } })<CR>', { noremap = true, silent = true, desc = 'Leap' })
