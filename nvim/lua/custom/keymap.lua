@@ -45,7 +45,7 @@ vim.api.nvim_set_keymap('n', '<C-Q>', '<cmd>lua require("telescope.actions").sen
 vim.api.nvim_set_keymap('i', '<C-Q>', '<cmd>lua require("telescope.actions").send_to_qflist()<CR><cmd>lua require("telescope.actions").open_qflist()<CR>', { noremap = true, silent = true })
 
 -- leader g y shows neoclip in telescope
-vim.api.nvim_set_keymap('n', '<leader>gy', '<cmd>lua require("telescope").extensions.neoclip.default()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gy', '<cmd>lua require("telescope").extensions.neoclip.default()<CR>', { noremap = true, silent = true, desc = 'Go To Clips' })
 
 --leader g e goes to next diagnostic, severity: error or warning, uses vim.diagnostic
 vim.api.nvim_set_keymap('n', '<leader>ge', '<cmd>lua vim.diagnostic.goto_next({severity = { vim.diagnostic.severity.WARN, vim.diagnostic.severity.ERROR }})<CR>', { noremap = true, silent = true })
@@ -63,3 +63,9 @@ end, { noremap = true, silent = true })
 
 -- leader s to use leap.nvim
 vim.api.nvim_set_keymap('n', '<leader>s', '<cmd>lua require("leap").leap({ target_windows = {  vim.api.nvim_get_current_win() } })<CR>', { noremap = true, silent = true, desc = 'Leap' })
+
+-- leader C-n to use telescope file browser
+vim.api.nvim_set_keymap('n', '<C-n>', ':Telescope file_browser path=%:p:h select_buffer=true follow=true no_ignore=true hidden=true <CR><Esc><CR>', { noremap = true, silent = true, desc = 'Telescope File Browser' })
+
+-- leader C-m to use nvim-tree
+vim.api.nvim_set_keymap('n', '<C-m>', ':NvimTreeToggle <CR>', { noremap = true, silent = true, desc = 'Toggle NvimTree' })

@@ -147,6 +147,10 @@ local plugins = {
     },
     -- See Commands section for default commands if you want to lazy load on them
   },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  }
 }
 
 return plugins
