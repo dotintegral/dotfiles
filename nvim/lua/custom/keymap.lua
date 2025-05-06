@@ -64,8 +64,8 @@ end, { noremap = true, silent = true })
 -- leader s to use leap.nvim
 vim.api.nvim_set_keymap('n', '<leader>s', '<cmd>lua require("leap").leap({ target_windows = {  vim.api.nvim_get_current_win() } })<CR>', { noremap = true, silent = true, desc = 'Leap' })
 
--- leader C-n to use telescope file browser
-vim.api.nvim_set_keymap('n', '<C-n>', ':Telescope file_browser path=%:p:h select_buffer=true follow=true no_ignore=true hidden=true <CR><Esc><CR>', { noremap = true, silent = true, desc = 'Telescope File Browser' })
+-- leader C-n to use neotree in floating window
+vim.keymap.set('n', '<C-n>', ':Neotree source=filesystem reveal=true position=float<CR>', { noremap = true, silent = true })
 
--- leader C-m to use nvim-tree
-vim.api.nvim_set_keymap('n', '<C-m>', ':NvimTreeToggle <CR>', { noremap = true, silent = true, desc = 'Toggle NvimTree' })
+-- leader C-m to use neotree in left window
+vim.api.nvim_set_keymap('n', '<C-m>', ':Neotree source=filesystem reveal=true position=left<CR>', { noremap = true, silent = true, desc = 'Toggle NvimTree' })
