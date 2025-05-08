@@ -18,4 +18,17 @@ vim.cmd([[
 -- Enable loading project specific settings
 vim.opt.exrc = true
 
+-- Fix newline indentation in vim 0.11.x
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.cindent = false
+vim.opt.indentexpr = ""  -- Let filetypes set their own, or use fallback
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.schedule(function()
+      vim.opt_local.indentexpr = ""
+    end)
+  end,
+})
