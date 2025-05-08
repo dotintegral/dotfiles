@@ -161,6 +161,7 @@ local plugins = {
     ---@type neotree.Config?
     opts = {
       -- fill any relevant options here
+      popup_border_style = "NC",
       filesystem = {
         filtered_items = {
           visible = false, -- when true, they will just be displayed differently than normal items
