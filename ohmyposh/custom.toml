@@ -88,6 +88,18 @@ final_space = true
     [blocks.segments.properties]
       always_enabled = true
 
+  [[blocks.segments]]
+    type = "time"
+    style = "diamond"
+    template = "{{ .CurrentDate | date .Format }}"
+    leading_diamond = ''
+    trailing_diamond = ''
+    foreground = 'p:black'
+    background = 'yellow'
+
+    [blocks.segments.properties]
+      time_format = "15:04:05"
+
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
