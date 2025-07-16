@@ -20,10 +20,18 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "Code Actions" }
 )
 
--- leader C-n to use Snacks.picker in floating window
+-- leader C-n to use Snacks.picker in floating window for file explorer
 vim.keymap.set(
   "n",
   "<C-n>",
   '<cmd>lua Snacks.picker.explorer({ layout = { preset = "default", preview = true }})<CR>',
+  { noremap = true, silent = true }
+)
+
+-- leader C-a to use Snacks.picker for displaying opened buffers
+vim.keymap.set(
+  "n",
+  "<leader>a",
+  '<cmd>lua Snacks.picker.buffers({ layout = { preset = "default", preview = true }})<CR>',
   { noremap = true, silent = true }
 )
