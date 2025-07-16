@@ -20,10 +20,10 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "Code Actions" }
 )
 
--- leader C-n to use neotree in floating window
+-- leader C-n to use Snacks.picker in floating window
 vim.keymap.set(
   "n",
   "<C-n>",
-  ":Neotree source=filesystem reveal=true position=float<CR>",
+  '<cmd>lua Snacks.picker.explorer({ layout = { preset = "default", preview = true }})<CR>',
   { noremap = true, silent = true }
 )
