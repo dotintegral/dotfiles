@@ -12,10 +12,18 @@ vim.api.nvim_set_keymap("n", "<M-s>", "<cmd>lua SaveAndFormat()<CR>", {
   silent = true,
 })
 
--- Set leader . to use code actions
+-- Set leader-. to use code actions
 vim.api.nvim_set_keymap(
   "n",
   "<leader>.",
   "<cmd>lua vim.lsp.buf.code_action()<CR>",
   { noremap = true, silent = true, desc = "Code Actions" }
+)
+
+-- leader C-n to use neotree in floating window
+vim.keymap.set(
+  "n",
+  "<C-n>",
+  ":Neotree source=filesystem reveal=true position=float<CR>",
+  { noremap = true, silent = true }
 )
