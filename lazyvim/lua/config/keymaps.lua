@@ -28,6 +28,9 @@ vim.keymap.set(
   { noremap = true, silent = true }
 )
 
+-- leader-fw to use Snacks.picker for grepping the project
+vim.keymap.set("n", "<leader>fw", "<cmd>lua Snacks.picker.grep()<CR>", { noremap = true, silent = true })
+
 -- leader-a to use Snacks.picker for displaying opened buffers
 vim.keymap.set(
   "n",
@@ -35,6 +38,6 @@ vim.keymap.set(
   '<cmd>lua Snacks.picker.buffers({ layout = { preset = "default", preview = true }})<CR>',
   { noremap = true, silent = true }
 )
--- leader fg See changed files (git)
 
+-- leader fg See changed files (git)
 vim.keymap.set("n", "<leader>fg", "<cmd>lua Snacks.picker.git_status()<CR>", { noremap = true, silent = true })
