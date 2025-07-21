@@ -41,3 +41,19 @@ vim.keymap.set(
 
 -- leader fg See changed files (git)
 vim.keymap.set("n", "<leader>fg", "<cmd>lua Snacks.picker.git_status()<CR>", { noremap = true, silent = true })
+
+-- navigate through errors and warnings with leader gw
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gw",
+  "<cmd>lua vim.diagnostic.goto_next({severity = { vim.diagnostic.severity.WARN, vim.diagnostic.severity.ERROR }})<CR>",
+  { noremap = true, silent = true }
+)
+
+-- navigate through errors leader ge
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ge",
+  "<cmd>lua vim.diagnostic.goto_next({severity = { vim.diagnostic.severity.ERROR }})<CR>",
+  { noremap = true, silent = true }
+)
