@@ -57,3 +57,11 @@ vim.api.nvim_set_keymap(
   "<cmd>lua vim.diagnostic.goto_next({severity = { vim.diagnostic.severity.ERROR }})<CR>",
   { noremap = true, silent = true }
 )
+
+-- leader gd to show LSP Definitions
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gd",
+  "<cmd>lua Snacks.picker.lsp_definitions()<CR>",
+  { noremap = true, silent = true, desc = "Go to Definition" }
+)
