@@ -14,10 +14,10 @@ return {
     opts.keymap["<S-Tab>"] = { "select_prev", "fallback" }
 
     -- strongly recommended: no preselect/auto-insert so enter can’t commit “ghost” items
-    opts.completion = vim.tbl_deep_extend("force", opts.completion or {}, {
-      list = {
-        selection = { preselect = false, auto_insert = false },
-      },
-    })
+    -- opts.completion = vim.tbl_deep_extend("force", opts.completion or {}, {
+    --   list = {
+    --     selection = { preselect = false, auto_insert = false },
+    --   },
+    -- })
   end,
 }
