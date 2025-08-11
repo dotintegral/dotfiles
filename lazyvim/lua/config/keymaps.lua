@@ -21,12 +21,12 @@ vim.api.nvim_set_keymap(
 )
 
 -- C-n to use Snacks.picker in floating window for file explorer
-vim.keymap.set(
-  "n",
-  "<C-n>",
-  '<cmd>lua Snacks.picker.explorer({ layout = { preset = "default", preview = true }})<CR>',
-  { noremap = true, silent = true }
-)
+vim.keymap.set("n", "<C-n>", function()
+  require("snacks").picker.explorer({
+    layout = { preset = "default", preview = true },
+    auto_close = true,
+  })
+end, { noremap = true, silent = true })
 
 -- leader-fw to use Snacks.picker for grepping the project
 vim.keymap.set("n", "<leader>fw", "<cmd>lua Snacks.picker.grep()<CR>", { noremap = true, silent = true })
