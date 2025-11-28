@@ -21,6 +21,7 @@ config.background = {
 		repeat_x = "NoRepeat",
 		repeat_y = "NoRepeat",
 		opacity = 1.0,
+		hsb = { brightness = 1.2, saturation = 1.1, hue = 1.1 },
 	},
 	-- Top tint to dim the wallpaper while keeping the window opaque
 	{
