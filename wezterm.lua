@@ -7,6 +7,9 @@ config.font = wezterm.font("Fira Code")
 
 config.font_size = 11.5
 
+config.initial_cols = 268
+config.initial_rows = 67
+
 config.colors = {
 	foreground = "#d3c6aa",
 	background = "#252d34",
@@ -52,7 +55,7 @@ config.background = {
 		source = { Color = "#1c1615" },
 		width = "100%",
 		height = "100%",
-		opacity = 0.8,
+		opacity = 0.7,
 	},
 }
 
@@ -83,6 +86,11 @@ config.keys = {
 		key = "r",
 		mods = "CMD|SHIFT",
 		action = wezterm.action.ReloadConfiguration,
+	},
+	{
+		key = "s",
+		mods = "CMD",
+		action = wezterm.action.SendKey({ key = "s", mods = "CTRL" }),
 	},
 }
 
