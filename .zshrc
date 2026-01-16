@@ -118,3 +118,6 @@ eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/custom.toml)"
 
 
 source ~/.zsh_aliases
+
+#Vega CLI
+source "/Users/asiery/vega/env"

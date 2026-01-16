@@ -7,8 +7,8 @@ config.font = wezterm.font("Fira Code")
 
 config.font_size = 11.5
 
-config.initial_cols = 268
-config.initial_rows = 67
+config.initial_cols = 160
+config.initial_rows = 64
 
 config.colors = {
 	foreground = "#d3c6aa",
