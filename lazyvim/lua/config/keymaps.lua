@@ -47,7 +47,7 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>gw",
   "<cmd>lua vim.diagnostic.goto_next({severity = { vim.diagnostic.severity.WARN, vim.diagnostic.severity.ERROR }})<CR>",
-  { noremap = true, silent = true }
+  { noremap = true, silent = true, desc = "Next WARN or ERROR" }
 )
 
 -- navigate through errors leader ge
@@ -55,7 +55,7 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>ge",
   "<cmd>lua vim.diagnostic.goto_next({severity = { vim.diagnostic.severity.ERROR }})<CR>",
-  { noremap = true, silent = true }
+  { noremap = true, silent = true, desc = "Next ERROR" }
 )
 
 -- leader gd to show LSP Definitions
