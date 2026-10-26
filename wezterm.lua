@@ -61,6 +61,8 @@ config.background = {
 
 config.use_ime = true
 
+config.default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "main" }
+
 config.enable_tab_bar = false
 config.freetype_load_target = "HorizontalLcd"
 
