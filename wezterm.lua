@@ -59,6 +59,8 @@ config.background = {
 	},
 }
 
+config.use_ime = true
+
 config.enable_tab_bar = false
 config.freetype_load_target = "HorizontalLcd"
 

@@ -10,7 +10,7 @@
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function(args)
-    vim.diagnostic.disable(args.buf)
+    vim.diagnostic.enable(false, { bufnr = args.buf })
   end,
 })
 
