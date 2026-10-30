@@ -40,3 +40,7 @@ function Tabs:redraw()
 	end
 	return ui.Line(tabs):area(self._area):align(ui.Align.CENTER)
 end
+
+require("session"):setup {
+	sync_yanked = true,
+}
