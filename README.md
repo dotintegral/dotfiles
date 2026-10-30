@@ -1,35 +1,66 @@
-Türbö Nerd Setup
-================
+# Türbö Nerd Setup
 
-### Prerequisites:
+Everything is themed with [Catppuccin Mocha](https://catppuccin.com), using green as the accent color.
 
-1. Install good terminal - iTerm2
-1. Pick good theme - [Themes](https://iterm2colorschemes.com/)
-1. Install good NerdFont - Fira Code Nerd Font [downloads page](https://www.nerdfonts.com/font-downloads)
-1. Install zsh
+### Prerequisites
 
-### Install Gnu Stow
+1. Install [Homebrew](https://brew.sh)
+1. Clone this repo to `~/dotfiles`
+1. Install the font - Fira Code Nerd Font [downloads page](https://www.nerdfonts.com/font-downloads)
 
-1. `brew install stow` to install
-1. `cd ~/dotfiles && stow .` to symlink things
+### Terminal - WezTerm
 
+```sh
+brew install --cask wezterm
+ln -s ~/dotfiles/wezterm.lua ~/.wezterm.lua
+```
 
-### Awesome ZSH
+The background image is read from `~/style/wallpapers/terminal-background.png`.
 
-1. Install Oh My ZSH - [check here](https://ohmyz.sh/#install)
-1. Install Theme Powerlevel10k - [check here](https://github.com/romkatv/powerlevel10k)
+### Shell - zsh + Oh My Zsh + Oh My Posh
 
+1. Install Oh My Zsh - [check here](https://ohmyz.sh/#install)
+1. Install the plugins and the prompt, then link the configs:
 
-### TMux Setup
+```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.zsh_aliases ~/.zsh_aliases
+```
 
-1. Install TMux - `brew install tmux`
-1. Install TMux Packet Manager - `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+The prompt config lives in `ohmyposh/custom.toml`.
 
-### NVim Setup
-1. Install NeoVim - `brew install nvim`
-1. Link `nvim` dir to `~/.config/nvim`
+### TMux
 
-### LazyGit Setup
-1. Install NeoVim - `brew install lazygit`
-1. Link `lazygit/config.yml` dir to `~/Library/Application\ Support/lazygit/config.yml`
+```sh
+brew install tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+```
 
+Then start tmux and press `prefix + I` (prefix is `Ctrl-p`) to install the plugins.
+
+### NeoVim - LazyVim
+
+```sh
+brew install nvim
+ln -s ~/dotfiles/lazyvim ~/.config/nvim
+```
+
+### LazyGit
+
+```sh
+brew install lazygit
+mkdir -p ~/Library/Application\ Support/lazygit
+ln -s ~/dotfiles/lazygit/config.yml ~/Library/Application\ Support/lazygit/config.yml
+```
+
+### Yazi
+
+```sh
+brew install yazi
+ln -s ~/dotfiles/yazi ~/.config/yazi
+ya pkg install
+```

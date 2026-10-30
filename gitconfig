@@ -1,0 +1,18 @@
+[core]
+  editor = code --wait
+
+[diff]
+  tool = vscode
+
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+  tool = nvimdiff
+
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+
+[mergetool "nvimdiff"]
+  cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
