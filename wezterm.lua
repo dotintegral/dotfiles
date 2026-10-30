@@ -10,7 +10,7 @@ config.font_size = 11.5
 config.initial_cols = 160
 config.initial_rows = 64
 
-config.colors = {
+local everforest_colors = {
 	foreground = "#d3c6aa",
 	background = "#252d34",
 	ansi = {
@@ -34,6 +34,8 @@ config.colors = {
 		"#eeebde", -- color15
 	},
 }
+
+config.color_scheme = "Catppuccin Mocha"
 
 config.window_background_opacity = 1.0
 config.text_background_opacity = 1.0
