@@ -26,8 +26,8 @@ The background image is read from `~/style/wallpapers/terminal-background.png`.
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.zsh_aliases ~/.zsh_aliases
+ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/zsh_aliases ~/.zsh_aliases
 ```
 
 The prompt config lives in `ohmyposh/custom.toml`.
