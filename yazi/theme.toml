@@ -1,2 +1,47 @@
 [flavor]
 dark = "catppuccin-mocha"
+
+[tabs]
+active   = { fg = "#1e1e2e", bg = "#a6e3a1", bold = true }
+inactive = { fg = "#a6e3a1", bg = "#313244" }
+
+[mode]
+normal_main = { fg = "#1e1e2e", bg = "#a6e3a1", bold = true }
+normal_alt  = { fg = "#a6e3a1", bg = "#313244" }
+
+[status]
+perm_type = { fg = "#a6e3a1" }
+
+[pick]
+border = { fg = "#a6e3a1" }
+
+[input]
+border = { fg = "#a6e3a1" }
+
+[cmp]
+border = { fg = "#a6e3a1" }
+
+[tasks]
+border = { fg = "#a6e3a1" }
+
+[which]
+border = { fg = "#a6e3a1" }
+
+[spot]
+border = { fg = "#a6e3a1" }
+title  = { fg = "#a6e3a1" }
+
+[filetype]
+prepend_rules = [
+	{ url = "*/", fg = "#a6e3a1" },
+]
+
+[icon]
+prepend_dirs = [
+	{ name = ".github", text = "", fg = "#a6e3a1" },
+	{ name = ".npm", text = "", fg = "#a6e3a1" },
+]
+prepend_conds = [
+	{ if = "dir & hovered", text = "", fg = "#a6e3a1" },
+	{ if = "dir", text = "", fg = "#a6e3a1" },
+]
