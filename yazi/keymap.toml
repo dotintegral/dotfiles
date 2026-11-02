@@ -5,5 +5,10 @@ desc = "Enter the child directory, or open the file"
 
 [[mgr.prepend_keymap]]
 on = ["c", "a"]
-run = "shell 'cat %s | pbcopy'"
+run = "shell '~/.config/yazi/copy-contents.sh %h'"
 desc = "Copy file contents"
+
+[[mgr.prepend_keymap]]
+on = ["t", "c"]
+run = "close"
+desc = "Close the current tab"
